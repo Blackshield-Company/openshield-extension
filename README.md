@@ -1,3 +1,5 @@
+![openshield-extension](.github/preview.png)
+
 # OpenShield browser extension
 
 A Firefox and Chrome remote for a running [OpenShield](https://github.com/Blackshield-Company/openshield) instance (`openshield serve`). It does no work on its own: it talks to your OpenShield server over its REST + WebSocket API.
