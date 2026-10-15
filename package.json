@@ -1,0 +1,29 @@
+{
+  "name": "openshield-extension",
+  "version": "0.1.0",
+  "description": "Browser remote for OpenShield: send pages and selections into a session, watch status, approve tool calls.",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "lint:firefox": "web-ext lint --source-dir .output/firefox-mv2 --self-hosted",
+    "check": "tsc --noEmit -p tsconfig.check.json",
+    "test": "vitest run",
+    "postinstall": "wxt prepare"
+  },
+  "devDependencies": {
+    "@types/webextension-polyfill": "^0.12.6",
+    "@wxt-dev/module-svelte": "^2.0.5",
+    "svelte": "^5.57.2",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4",
+    "web-ext": "^10.7.0",
+    "webextension-polyfill": "^0.12.0",
+    "wxt": "^0.20.27"
+  }
+}
