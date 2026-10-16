@@ -1,6 +1,16 @@
-![openshield-extension](.github/preview.png)
+<p align="center">
+  <img src=".github/preview.png" alt="OpenShield browser extension" width="100%">
+</p>
 
-# OpenShield browser extension
+<h1 align="center">OpenShield browser extension</h1>
+
+<p align="center">Send pages and selections into an OpenShield session, watch status and approve tool calls from Firefox or Chrome.</p>
+
+<p align="center">
+  <a href="https://github.com/Blackshield-Company/openshield-extension/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Blackshield-Company/openshield-extension/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-9AA0A8?labelColor=17171D"></a>
+  <a href="https://github.com/Blackshield-Company/openshield"><img alt="Part of OpenShield" src="https://img.shields.io/badge/part%20of-OpenShield-C1121F?labelColor=17171D"></a>
+</p>
 
 A Firefox and Chrome remote for a running [OpenShield](https://github.com/Blackshield-Company/openshield) instance (`openshield serve`). It does no work on its own: it talks to your OpenShield server over its REST + WebSocket API.
 
