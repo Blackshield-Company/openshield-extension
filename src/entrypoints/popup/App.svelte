@@ -1,11 +1,23 @@
 <script lang="ts">
-  import ShieldMark from "../../lib/ShieldMark.svelte";
+  import KnightSprite from "../../lib/KnightSprite.svelte";
   import browser from "webextension-polyfill";
   import { OpenShieldClient, type SessionMessage, type SessionSummary, type WireDecision } from "../../lib/client";
   import { loadConfig } from "../../lib/storage";
   import type { BgStatus } from "../../lib/messages";
 
   let status = $state<BgStatus | null>(null);
+  // Header knight mirrors the connection: pending approvals put him to work.
+  const knight = $derived(
+    !status || status.state === "connecting"
+      ? "thinking"
+      : status.state === "connected"
+        ? status.approvals.length > 0
+          ? "working"
+          : "idle"
+        : status.state === "unconfigured"
+          ? "idle"
+          : "error",
+  );
   let sessions = $state<SessionSummary[]>([]);
   let messages = $state<SessionMessage[]>([]);
   let busy = $state<string | null>(null);
@@ -52,7 +64,7 @@
 
 <main>
   <header>
-    <ShieldMark size={20} />
+    <KnightSprite state={knight} size={32} label={`OpenShield: ${status?.state ?? "loading"}`} />
     <h1>OpenShield</h1>
     <button class="link" onclick={() => browser.runtime.openOptionsPage()}>Settings</button>
   </header>
