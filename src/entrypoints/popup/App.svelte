@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ShieldMark from "../../lib/ShieldMark.svelte";
   import browser from "webextension-polyfill";
   import { OpenShieldClient, type SessionMessage, type SessionSummary, type WireDecision } from "../../lib/client";
   import { loadConfig } from "../../lib/storage";
@@ -51,7 +52,7 @@
 
 <main>
   <header>
-    <img src="/icon/32.png" alt="" width="20" height="20" />
+    <ShieldMark size={20} />
     <h1>OpenShield</h1>
     <button class="link" onclick={() => browser.runtime.openOptionsPage()}>Settings</button>
   </header>

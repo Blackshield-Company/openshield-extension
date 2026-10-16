@@ -36,7 +36,7 @@ export default defineBackground(() => {
     browser.runtime.sendMessage({ type: "statusChanged", status }).catch(() => {});
     const n = status.approvals.length;
     browser.action?.setBadgeText?.({ text: n ? String(n) : "" }).catch?.(() => {});
-    browser.action?.setBadgeBackgroundColor?.({ color: "#b3141c" }).catch?.(() => {});
+    browser.action?.setBadgeBackgroundColor?.({ color: "#C1121F" }).catch?.(() => {});
   }
 
   async function refresh(): Promise<void> {

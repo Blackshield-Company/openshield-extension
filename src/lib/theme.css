@@ -1,23 +1,36 @@
-/* Blackshield palette (from the Blackshield Battle Firefox theme). */
+/* OpenShield Black Steel palette. Values come from the shared brand
+ * tokens (src/lib/tokens.css, copied from docs/brand/tokens.css). The
+ * --bs-* names are kept so component styles don't need to change. */
+@import "./tokens.css";
+
 :root {
-  --bs-frame: #140a0a;
-  --bs-bg: #1c1010;
-  --bs-field: #0e0808;
-  --bs-text: #eadcd2;
-  --bs-muted: #a8968a;
-  --bs-accent: #b3141c;
-  --bs-ok: #3fa45b;
-  --bs-warn: #d49a2a;
+  --bs-frame: var(--os-void);
+  --bs-bg: var(--os-void);
+  --bs-field: var(--os-iron);
+  --bs-edge: var(--os-edge);
+  --bs-text: var(--os-bone);
+  --bs-body: var(--os-text-muted);
+  --bs-muted: var(--os-steel);
+  --bs-accent: var(--os-blood);
+  --bs-accent-hi: var(--os-blood-hi);
+  --bs-ok: var(--os-moss);
+  --bs-warn: var(--os-ember);
   color-scheme: dark;
 }
-body { margin: 0; background: var(--bs-bg); color: var(--bs-text); font: 13px/1.4 system-ui, sans-serif; }
-h1 { font-size: 15px; margin: 0; letter-spacing: 0.04em; }
-h2 { font-size: 12px; text-transform: uppercase; color: var(--bs-muted); margin: 14px 0 6px; }
-button { background: var(--bs-field); color: var(--bs-text); border: 1px solid #3a2420; border-radius: 4px; padding: 4px 10px; cursor: pointer; }
-button.primary { background: var(--bs-accent); border-color: var(--bs-accent); }
+body { margin: 0; background: var(--bs-bg); color: var(--bs-body); font: 13px/1.45 var(--os-font-ui); }
+h1 { font: 600 15px var(--os-font-display); color: var(--bs-text); margin: 0; letter-spacing: 0.06em; }
+h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bs-muted); margin: 14px 0 6px; }
+strong { color: var(--bs-text); }
+code, pre { font-family: var(--os-font-mono); }
+button { background: var(--bs-field); color: var(--bs-text); border: 1px solid var(--bs-edge); border-radius: var(--os-radius); padding: 4px 10px; cursor: pointer; font: inherit; }
+button:hover:not(:disabled) { background: var(--os-plate); }
+button.primary { background: var(--bs-accent); border-color: var(--bs-accent); color: #fff; font-weight: 600; }
+button.primary:hover:not(:disabled) { background: var(--bs-accent-hi); border-color: var(--bs-accent-hi); }
 button:disabled { opacity: 0.5; cursor: default; }
-input { background: var(--bs-field); color: var(--bs-text); border: 1px solid #3a2420; border-radius: 4px; padding: 6px; width: 100%; box-sizing: border-box; }
+input { background: #0a0a0d; color: var(--bs-text); border: 1px solid var(--bs-edge); border-radius: var(--os-radius); padding: 6px; width: 100%; box-sizing: border-box; font: inherit; }
+input:focus { outline: none; border-color: var(--bs-accent); }
 .muted { color: var(--bs-muted); }
-.err { color: #ff6b6b; }
+.err { color: var(--bs-accent-hi); }
 .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
-.card { background: var(--bs-field); border: 1px solid #2c1a17; border-radius: 6px; padding: 8px; margin-bottom: 6px; }
+.card { background: var(--bs-field); border: 1px solid var(--bs-edge); border-radius: var(--os-radius); padding: 8px; margin-bottom: 6px; }
+.shield-mark { flex: none; display: block; }
