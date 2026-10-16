@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ShieldMark from "../../lib/ShieldMark.svelte";
   import browser from "webextension-polyfill";
   import { OpenShieldClient, isLocalHost, originPattern, validateConfig } from "../../lib/client";
   import { clearConfig, loadConfig, saveConfig } from "../../lib/storage";
@@ -35,7 +36,7 @@
 </script>
 
 <main>
-  <h1>OpenShield settings</h1>
+  <h1 class="title"><ShieldMark size={22} /> OpenShield settings</h1>
   <form onsubmit={save}>
     <label>Host <input bind:value={host} autocomplete="off" /></label>
     <label>Port <input type="number" min="1" max="65535" bind:value={port} /></label>
@@ -59,6 +60,7 @@ allowed_origins = ["{extOrigin}"]</pre>
 </main>
 
 <style>
+  .title { display: flex; align-items: center; gap: 10px; }
   main { max-width: 520px; margin: 24px auto; padding: 0 16px; }
   label { display: block; margin: 10px 0; }
   .row { display: flex; gap: 8px; margin-top: 12px; }
