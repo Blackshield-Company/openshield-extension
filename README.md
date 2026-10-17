@@ -19,7 +19,7 @@ A Firefox and Chrome remote for a running [OpenShield](https://github.com/Blacks
 - **Approvals**: pending tool calls raise a notification. On Chrome you can approve or deny from the notification; on Firefox, click it to open the approval window. The popup always has Approve and Deny.
 - **Settings**: host, port and pairing token.
 
-Status: early MVP (0.1.0). Not published to any store yet; load it unpacked.
+Status: early MVP (0.2.0). Not published to any store yet; load it unpacked.
 
 ## Requirements
 
